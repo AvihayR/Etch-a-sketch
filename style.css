@@ -5,10 +5,8 @@ body{
     align-items: center;
 }
 .grid-container{
-    display: flex;
-    flex-wrap: wrap;
-    /*display: grid;*/
-    /*grid-template-columns:max-content max-content max-content;*/
+    display: grid;
+    grid-template-columns: repeat(16,auto);
     max-width: 80%;
 }
 
@@ -21,6 +19,6 @@ body{
 
 .block-break{
     height: 1px;
-    width: 100%;
+    min-width: 100%;
     flex-grow: 5;
 };
