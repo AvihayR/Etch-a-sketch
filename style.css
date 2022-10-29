@@ -6,6 +6,16 @@ body{
     font-size: max(0.8vw, 1px);
 }
 
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
 .grid-container{
     display: grid;
     grid-template-columns: repeat(16,1fr);
