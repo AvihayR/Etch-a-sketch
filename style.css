@@ -3,22 +3,22 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: max(0.8vw, 1px);
 }
+
 .grid-container{
     display: grid;
-    grid-template-columns: repeat(16,auto);
+    grid-template-columns: repeat(16,1fr);
     max-width: 80%;
 }
 
 .grid-item{
     border: 1px solid brown;
-    width: 10px;
+    /*max-width:8px;*/
     margin: 0;
-    padding: 8px;
+    padding: 0.4rem;
 }
 
-.block-break{
-    height: 1px;
-    min-width: 100%;
-    flex-grow: 5;
-};
+.color{
+    background-color: aqua;
+}

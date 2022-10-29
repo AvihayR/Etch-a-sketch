@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-const gridContainer = body.querySelector('.grid-container')
+const gridContainer = body.querySelector('.grid-container');
 
 function createDivs(){
     for(let i = 0; i < 256; i ++){
@@ -11,3 +11,11 @@ function createDivs(){
 };
 
 createDivs();
+
+let gridItems = gridContainer.querySelectorAll('.grid-item');
+
+function colorDiv(e){
+    this.classList.add('color');
+};
+
+gridItems.forEach( item => item.addEventListener('mouseover',colorDiv));
