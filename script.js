@@ -1,5 +1,8 @@
 const body = document.querySelector('body');
 const gridContainer = body.querySelector('.grid-container');
+const btnContainer = body.querySelector('.btn-container');
+const customBtn = btnContainer.querySelector('.custom-btn');
+const resetBtn = btnContainer.querySelector('.reset');
 
 function createDivs(){
     for(let i = 0; i < 256; i ++){
@@ -21,9 +24,9 @@ function colorDiv(e){
 
 gridItems.forEach( item => item.addEventListener('mouseover',colorDiv));
 
-
-const btnContainer = body.querySelector('.btn-container');
-const customBtn = btnContainer.querySelector('.custom-btn');
+function resetColor(){
+    gridItems.forEach(item => item.classList.remove('color'));
+}
 
 function createCustomDivs(){
     let num = prompt('Enter a single number of desired Columns, e.g "16" ');
@@ -45,3 +48,4 @@ function createCustomDivs(){
 };
 
 customBtn.addEventListener('click',createCustomDivs);
+resetBtn.addEventListener('click',resetColor);
