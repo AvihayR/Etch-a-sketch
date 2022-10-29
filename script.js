@@ -29,11 +29,13 @@ function resetColor(){
 }
 
 function createCustomDivs(){
-    let num = prompt('Enter a single number of desired Columns, e.g "16" ');
-    if (num >= 101 || num == NaN){
-        alert('Error, input is not a number or number is exceeding 100.')
+    let num = prompt('Enter a single number of desired Columns, up to a maximum of 100. ');
+    if (num >= 101 || isNaN(num) || num<0){
+        alert('Error, input is not a number or number is exceeding 100.');
         return;
     };
+
+
     gridContainer.replaceChildren();
 
         for(let i = 0; i<num*num; i++){
