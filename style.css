@@ -20,15 +20,21 @@ p{
     display: grid;
     grid-template-columns: repeat(16,1fr);
     max-width: 80%;
+   /* border: 1px solid black;
+    border-radius: 25px;
+    padding: 0.3vw;
+    background-color: rgb(255, 253, 224);*/
 }
 
 .grid-item{
-    border: 1px solid brown;
-    /*max-width:8px;*/
+    border: 0.2px solid rgb(206, 199, 171);
     margin: 0;
-    padding: 0.4rem;
+    padding: 0.7rem;
+    border-radius: 2px;
+    
 }
 
 .color{
-    background-color: aqua;
+    transition: 0.4s;
+    box-shadow: 3px 1px pink;
 }

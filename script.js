@@ -5,12 +5,12 @@ const customBtn = btnContainer.querySelector('.custom-btn');
 const resetBtn = btnContainer.querySelector('.reset');
 const defaultBtn = btnContainer.querySelector('.default-btn');
 
+
 function createDivs(){
     gridContainer.replaceChildren();
     for(let i = 0; i < 256; i ++){
         const div = document.createElement('div');
         div.classList.add('grid-item')
-        div.textContent = i;
         gridContainer.appendChild(div);
         gridContainer.style = `grid-template-columns: repeat(16,1fr)`;
         let gridItems = gridContainer.querySelectorAll('.grid-item');
@@ -23,15 +23,24 @@ createDivs();
 
 let gridItems = gridContainer.querySelectorAll('.grid-item');
 
+let counter = 0;
+
 function colorDiv(e){
     this.classList.add('color');
+    ++counter;
+    this.style.backgroundColor = `hsl(${counter},100%, 50%)`;
 };
+
+
+
 
 gridItems.forEach( item => item.addEventListener('mouseover',colorDiv));
 
 function resetColor(){
     let gridItems = gridContainer.querySelectorAll('.grid-item');
     gridItems.forEach(item => item.classList.remove('color'));
+    gridItems.forEach(item => item.style.backgroundColor = null);
+
 };
 
 function createCustomDivs(){
@@ -46,7 +55,6 @@ function createCustomDivs(){
         for(let i = 0; i<num*num; i++){
             const div = document.createElement('div');
             div.classList.add('grid-item');
-            div.textContent = i;
             gridContainer.appendChild(div);
             gridContainer.style = `grid-template-columns: repeat(${num},1fr)`;
         };
@@ -57,3 +65,4 @@ function createCustomDivs(){
 customBtn.addEventListener('click',createCustomDivs);
 resetBtn.addEventListener('click',resetColor);
 defaultBtn.addEventListener('click',createDivs);
+
